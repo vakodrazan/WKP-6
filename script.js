@@ -38,7 +38,7 @@ const foods = [
 
 const sumbmitOrder = document.querySelector(".sumbmitOrder");
 const article = document.querySelector("article");
-const spicy = document.querySelector("#spicy");
+const spicy = document.querySelector("input[name=spicy]");
 
 const foodOrder = () => {
     foods.forEach(foodList => {
@@ -56,24 +56,40 @@ const foodOrder = () => {
 // Filter the list when the check box is checked
 // Return only the value that has types of food checked
 
-if (spicy.checked) {
-	console.log("Hello");
-}
+const handleSpicyCheckbox = () => {
+	if (true/*spicy.checked*/) {
+		//article.removeChild(article.childNodes[5]);
+		for (let i=0; i<article.getElementsByTagName('*').length-5;i++) {
+			article.removeChild(article.childNodes[i+5]);
+		}
+		console.log("tree");
+		const filterSpicyFood = foods.filter(food => food.spicy);
+		filterSpicyFood.map(food => {
+			const myHtml = `
+				<div class="list" data-id="${food.id}" data-spicy="${food.spicy}" data-vegetarian="${food.vegetarian}">
+					<p>${food.title}</p>
+					<p>${food.price}Ar</p>
+					<button class="add">Add</button>
+				</div>
+			`;
+			article.innerHTML += myHtml;
+		});
+	}
+};
 
 
 
-
-// const addYourOrder = e => {
-// 	const button = e.target;
-//     const parent = button.closest('div.list');
-// 	const id = parent.dataset.id;
-// 	const foodOrder = foods.find(singleRecipe => singleRecipe.id === id);
+// addYourOrder = e => {
+// 	const parent = e.target.closest(".list");
+	
 // }
 
-const handleSumbmitOrder = () => {
-	console.log("Ordered food")
-}
+// const handleSumbmitOrder = () => {
+// 	console.log("Ordered food");
+// }
 
-// window.addEventListener("click", addYourOrder);
-sumbmitOrder.addEventListener("click", handleSumbmitOrder);
+//spicy.addEventListener('change', handleSpicyCheckbox);
+//window.addEventListener("click", handleSpicyCheckbox);
+// sumbmitOrder.addEventListener("click", handleSumbmitOrder);
 foodOrder();
+handleSpicyCheckbox();
