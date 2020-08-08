@@ -37,29 +37,43 @@ const foods = [
 ];
 
 const sumbmitOrder = document.querySelector(".sumbmitOrder");
-const section = document.querySelector(".section-list")
-const article = document.querySelector("article")
+const article = document.querySelector("article");
+const spicy = document.querySelector("#spicy");
 
 const foodOrder = () => {
     foods.forEach(foodList => {
-
         const foodListHtml = `
-			<div class="content" data-spicy="${foodList.spicy}" data-vegetarian="${foodList.vegetarian}">
-				<div class="list"  data-id="${foodList.id}">
-					<p>${foodList.title}</p>
-					<p>${foodList.price}</p>
-					<button class="add">Add</button>
-				</div>
+			<div class="list" data-id="${foodList.id}" data-spicy="${foodList.spicy}" data-vegetarian="${foodList.vegetarian}">
+				<p>${foodList.title}</p>
+				<p>${foodList.price}Ar</p>
+				<button class="add">Add</button>
 			</div>
         `;
         article.innerHTML += foodListHtml; 
     });
 };
 
+// Filter the list when the check box is checked
+// Return only the value that has types of food checked
+
+if (spicy.checked) {
+	console.log("Hello");
+}
+
+
+
+
+// const addYourOrder = e => {
+// 	const button = e.target;
+//     const parent = button.closest('div.list');
+// 	const id = parent.dataset.id;
+// 	const foodOrder = foods.find(singleRecipe => singleRecipe.id === id);
+// }
+
 const handleSumbmitOrder = () => {
 	console.log("Ordered food")
 }
 
-
+// window.addEventListener("click", addYourOrder);
 sumbmitOrder.addEventListener("click", handleSumbmitOrder);
 foodOrder();
