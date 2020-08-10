@@ -1,92 +1,37 @@
 # WKP6 - Hungry Student Restaurant
-
-### Another website about food, really...
-
+ 
+## Another website about food, really...
+ 
 Yes, but who doesn't like food? 😄
-
+ 
 This time, we're going to build a food delivery app, where we can see the meal options, select them, and see the result in our cart.
+ 
+## structure of your project
+ 
+ - I created an html inside of an html file but I only created the list in javascript because we need to return the value that is given in the array javascript. I use `forEach` to loop through each object.
+ 
+ - We need to filter the type of food when the checkbox is checked. I use the `filter` method. Since it's an array I use map to loop through each one of them.
+ 
+ - I filter them inside of an `if` statement because there is a condition I need to follow.
+ 
+## What area of your work would you improve if I had more time?
+ 
+ - I would carry on to work on the checkbox.
+ - I would do my best to finish everything if I can.
+ 
+## Anything new that I learn when I work on this project
+ 
+ - Using `map` function and creating an html inside of it.
+ - Before I didn't really understand how to use `forEach` but now I found that forEach is easier than `for` loop.
+ 
+## the most challenging part I pass: 
+ 
+ - I tried to work on the checkbox, it doesn't work when I use the statement, but when I tried to just call the function and use the true statement it works. Till now I couldn't find out how to solve that problem.
+ - I spend most of my time on that.
+ 
+## Explanation about a specific topic: 
+ 
+ - I would like to know what condition I should use for the checkbox.
+ 
+ 
 
-### Users must be able to :
-
--   See a list of five meal options
--   See the prices of each meal option
--   Add a meal to the cart
--   Filter the list to see only the vegetarian meals, or only the spicy ones
--   See their total bill
--   “Check out” - this doesn’t have to process payment, just simply display
-    a message stating the order as been confirmed.
-
-### Bonus :
-
--   Change the quantity of meals in the cart
--   Remove a meal from the cart
-
-Here is an example of layout :
-
-![assets/1.png](assets/1.png)
-
-And when I click on the _Confirm Order_ button, I can display a message to show the total bill from the order.
-
-![assets/2.png](assets/2.png)
-
-### Food list
-
-Here's the food object :
-
-```jsx
-const foods = [
-	{
-		id: 'ravitoto',
-		price: 5000,
-		title: 'Ravitoto',
-		spicy: true,
-		vegetarian: false,
-	},
-	{
-		id: 'pasta',
-		price: 4000,
-		title: 'Pasta',
-		spicy: true,
-		vegetarian: true,
-	},
-	{
-		id: 'burger',
-		price: 5000,
-		title: 'Burger',
-		spicy: false,
-		vegetarian: false,
-	},
-	{
-		id: 'rice',
-		price: 2000,
-		title: 'Rice and Leaves',
-		spicy: false,
-		vegetarian: true,
-	},
-	{
-		id: 'mofogasy',
-		price: 500,
-		title: 'Mofogasy',
-		spicy: false,
-		vegetarian: false,
-	},
-];
-```
-
-The **id** here is a unique string, is role is to identify an element inside the list. The title will be the food name shown to the user.
-
-You'll also have an **order** collection, where you will push a food object every time the user add an element to his order.
-
-### Maps, Filter, Reduce, and other friends
-
--   To generate any list of element (for example, the list of food), **Map** is really useful.
--   To get the full price of list of items, **Reduce** is the perfect use case.
--   To count how many times an item is in a list, you could **Filter** the list and see the length of the result, or use a **Reduce** to count all of the instances.
-
-But this is just one way to think about that. Feel free to try any other logic you have in mind.
-
-### 💡Tips
-
--   Don't forget to clean your code, and update your readme before Monday morning.
-
-Good luck!
